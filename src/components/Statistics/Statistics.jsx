@@ -1,7 +1,16 @@
 import { Component } from 'react';
 import style from './Statistics.module.css';
+import PropTypes from 'prop-types';
 
 class Statistics extends Component {
+  static defaultProps = {
+    namesProperty: {},
+  };
+  static propTypes = {
+    namesProperty: PropTypes.objectOf(PropTypes.number).isRequired,
+    total: PropTypes.func.isRequired,
+    positivePercentage: PropTypes.func.isRequired,
+  };
   render() {
     const { namesProperty, total, positivePercentage } = this.props;
     const percentage = positivePercentage();
