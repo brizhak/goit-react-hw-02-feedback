@@ -1,24 +1,33 @@
-import React, { Component } from 'react';
-import Buttons from './Buttons';
+import { Component } from 'react';
+import FeedbackOptions from './FeedbackOptions';
+import Statistics from './Statistics';
 
 class Widget extends Component {
-  state = {
-    Good: 0,
-    Neutral: 0,
-    Bad: 0,
-  };
-
   render() {
-    const buttons = Object.keys(this.state)
-    console.log(buttons)
+    const { namesProperty, onLeaveFeedback, total } = this.props;
+
+    const statisticsItems = Object.keys(namesProperty);
+
     return (
-        <>
-        <h2>Please leave feedback</h2>
-        <ul>
-          <Buttons buttons={buttons}/>
-        </ul>
-        <h2>Hello</h2>
-        </>
+      <>
+        <div>
+          <h2>Please leave feedback</h2>
+          <ul>
+            {statisticsItems.map(option => (
+              <FeedbackOptions
+                key={option}
+                id={option}
+                option={option}
+                onLeaveFeedback={onLeaveFeedback}
+              />
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2>Statistics</h2>
+          <Statistics namesProperty={namesProperty} total={total} />
+        </div>
+      </>
     );
   }
 }
