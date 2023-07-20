@@ -7,6 +7,7 @@ class Section extends Component {
   };
   static propTypes = {
     title: PropTypes.string,
+    children: PropTypes.node,
   };
 
   render() {

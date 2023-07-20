@@ -13,7 +13,7 @@ class Statistics extends Component {
   };
   render() {
     const { namesProperty, total, positivePercentage } = this.props;
-    const percentage = positivePercentage();
+    const percentage = positivePercentage;
 
     let percentageValue;
     if (Number.isNaN(percentage)) {
@@ -26,7 +26,7 @@ class Statistics extends Component {
         <li key="good">Good : {namesProperty.good}</li>
         <li key="neutral">Neutral : {namesProperty.neutral}</li>
         <li key="bad">Bad : {namesProperty.bad}</li>
-        <li key="total">Total : {total()}</li>
+        <li key="total">Total : {total}</li>
         <li key="percentage">Positive Feedback : {percentageValue}%</li>
       </ul>
     );

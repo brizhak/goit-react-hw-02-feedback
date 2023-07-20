@@ -52,8 +52,8 @@ class App extends Component {
               <Section title="Statistics">
                 <Statistics
                   namesProperty={{ good, neutral, bad }}
-                  total={this.countTotalFeedback}
-                  positivePercentage={this.countPositiveFeedbackPercentage}
+                  total={this.countTotalFeedback()}
+                  positivePercentage={this.countPositiveFeedbackPercentage()}
                 />
               </Section>
             ) : (
