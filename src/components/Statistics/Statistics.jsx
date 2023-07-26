@@ -8,8 +8,8 @@ class Statistics extends Component {
   };
   static propTypes = {
     namesProperty: PropTypes.objectOf(PropTypes.number).isRequired,
-    total: PropTypes.func.isRequired,
-    positivePercentage: PropTypes.func.isRequired,
+    total: PropTypes.number.isRequired,
+    positivePercentage: PropTypes.number.isRequired,
   };
   render() {
     const { namesProperty, total, positivePercentage } = this.props;
